@@ -44,6 +44,6 @@ async def remt(event):
   
 @Drone.on(events.NewMessage(incoming=True, pattern=f"{S}"))
 async def start(event):
-    text = "Send me Link of any message to clone it here, For private channel message, send invite link first."
+    text = "Send me Link of any message to clone it here, For private channel message, send invite link first.\n\n**SUPPORT:** @bothub01"
     await event.client.send_message(event.chat.id, text, buttons=[[Button.inline("SET THUMB", data="set"), Button.inline("REM THUMB", data="rem")]])
     
