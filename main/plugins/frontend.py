@@ -13,7 +13,7 @@ from pyrogram.errors import FloodWait
 
 from ethon.telefunc import force_sub
 
-ft = f"To use this bot you've to join @{fs}."
+# ft = f"To use this bot you've to join @{fs}."
 
 message = "Send me the message link you want to start saving from, as a reply to this message."
 
@@ -29,10 +29,10 @@ async def clone(event):
             return
     except TypeError:
         return
-    s, r = await force_sub(event.client, fs, event.sender_id, ft)
-    if s == True:
-        await event.reply(r)
-        return
+    # s, r = await force_sub(event.client, fs, event.sender_id, ft)
+    # if s == True:
+    #     await event.reply(r)
+    #     return
     edit = await event.reply("Processing!")
     try:
         if 't.me/+' in link:
@@ -46,4 +46,3 @@ async def clone(event):
     except Exception as e:
         print(e)
         await Drone.send_message(event.sender_id, f"An error occurred during cloning of `{link}`\n\n**Error:** {str(e)}")
-    
